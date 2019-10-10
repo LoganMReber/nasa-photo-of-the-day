@@ -1,7 +1,14 @@
 import React, {useState,useEffect} from "react";
 import axios from "axios";
+import styled from "styled-components";
 
-export default function Hero(){
+const HeroImg = styled.img`
+    max-width: 100%;
+    max-height: 75vh;
+    box-shadow: 0px 0px 9px 4px #449;
+`; 
+
+function Hero(){
     const [pic,setPic] = useState();
     useEffect(()=>{
         axios
@@ -10,6 +17,7 @@ export default function Hero(){
             .catch(e=>console.log(e));
     },[]);
     return (
-        <img src={pic} className="HeroImg" alt="NASA"/>
+        <HeroImg src={pic} alt="NASA"/>
     );
 }
+export default Hero;

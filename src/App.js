@@ -2,17 +2,24 @@ import React from "react";
 import "./App.css";
 import Hero from "./components/hero";
 import Data from "./components/data";
-
+import styled from "styled-components";
+const ImgDiv = styled.div`
+    max-width: 95%;
+    margin: 0 auto;
+`;
+const TitleH1 = styled.h1`
+    color: #FFF;
+`;
 function App() {
   return (
     <div className="App">
-      <h1>
+      <TitleH1>
         THE MAJESTY OF SPACE!!!
-      </h1>
-      <div className="imgContainer">
+      </TitleH1>
+      <ImgDiv>
         <Hero />
         <Data />
-      </div>
+      </ImgDiv>
     </div>
   );
 }

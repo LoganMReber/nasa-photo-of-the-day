@@ -1,7 +1,17 @@
 import React, {useState,useEffect} from "react";
 import axios from "axios";
-
-export default function Data(){
+import styled from "styled-components";
+const HTitle = styled.h3`
+    color: #FFF;
+`;
+const HDate = styled.h4`
+    color: #FFF;
+`;
+const PDesc = styled.p`
+    color: #FFF;
+    margin-bottom: 50px;
+`;
+function Data(){
     const [data,setData] = useState();
     useEffect(()=>{
         axios
@@ -14,9 +24,10 @@ export default function Data(){
     if(!data) return null;
     return(
         <div className='Data'>
-            <h3>{data.data.title}</h3>
-            <h4>{data.data.date}</h4>
-            <p>{data.data.explanation}</p>
+            <HTitle>{data.data.title}</HTitle>
+            <HDate>{data.data.date}</HDate>
+            <PDesc>{data.data.explanation}</PDesc>
         </div>
     );
 }
+export default Data;
